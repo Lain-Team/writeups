@@ -94,11 +94,11 @@ We read in the first line which is the total_time, number_of_players, time_per_g
 ### 2. Sweep Line
 Before performing the Sweep Line we first prepare event lists (add, rem) to track when a player becomes available or unavailable. To begin the Sweep we scan forward in time from 't = 1' upto 't = T'. At each step we add new players into a multiset(this is automatically sorted) and record the maximum popularity value available at that start time.
 ### 3. Backward Dynamic Programming
-We compute the optimal answer starting from teh end of the schedule. At each 't' we must choose between:
+We compute the optimal answer starting from the end of the schedule. At each 't' we must choose between:
 1. Skipping this minute ('dp[t+1]')
 2. Taking the best available game for that minute ('w[t] + dp[t+time_per_Game]')
 
 The result will be stored in dp[1] since it always starts at the first 1 minute, that is where the best combination for the full length of total_time is stored.
 
-### Why backwards DP and not forward(like the offical solution)? 
+### Why backwards DP and not forward(like the official solution)? 
 Those are solving 2 different questions. Forward DP would model "time has passed, what can end now?" and the Backwards DP models "what if I start now, what happens later". We used the backward DP because it was easier to write in terms of 'decisions at start times'. They both however work and are valid solutions with the same time complexity too.
