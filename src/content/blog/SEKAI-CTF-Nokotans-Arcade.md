@@ -3,7 +3,7 @@ author: ch1ko1
 title: "SEKAI-CTF / PPC / Nokotan's Arcade"
 description: "C++ solution"
 pubDate: "Aug 18 2025"
-heroImage: "/writeups/la1n.jpg"
+heroImage: "/writeups/ch1ko1.jpg"
 ---
 
 Problem Statement PDF - https://github.com/project-sekai-ctf/sekaictf-2025/blob/main/ppc/nokotans-arcade/dist/Nokotan's%20Arcade.pdf
@@ -85,7 +85,7 @@ int main()
 ## Explanation:
 
 The solution can be broken down into 3 parts:
-1. Parsing Inputs
+1. Input Parsing
 2. Sweep Line
 3. Backward Dynamic Programming
 
