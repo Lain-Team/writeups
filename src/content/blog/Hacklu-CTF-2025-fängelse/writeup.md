@@ -45,7 +45,7 @@ First, I tried **hex** and **int**. Hex spit out an error saying that the string
 
 Trying **id** was interesting, because it made the side-channel become a big number. I knew I had to work with a built-in that worked with strings, or any object.
 
-Using **all** did the work, as I later analyzed that the code also uses **len** to check the length of the code sent, before potentially rejecting the input. If **len** is overwritten by **all**, the line that checks the length will always return true, since the output of **all(code)** would be **1**, which is always less than 5.
+Using **all** did the work, as I later analyzed that the code also uses **len** to check the length of the code sent, before potentially rejecting the input. If **len** is overwritten by **all**, the line that checks the length will always return false, since the output of **all(code)** would be **1**, which is always less than 5.
 
 This had the unintended side effect of allowing a code of arbitrary length to be sent as the argument to **exec**. I used this to send a **print** statement to get the flag, and the server gladly accepted my input.
 
